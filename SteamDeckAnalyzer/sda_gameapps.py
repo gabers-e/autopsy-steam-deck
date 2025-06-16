@@ -151,12 +151,6 @@ class SteamDeckGameAppsDSIM(DataSourceIngestModulePlus):
         for appdata in sources.values():
             app_ids.update(appdata.keys())
         app_ids = sorted(app_ids, key=int)
-        
-        #app_ids.remove("1070560")
-        #app_ids.remove("1391110")
-        #app_ids.remove("1628350")
-        #app_ids.remove("2805730")
-        #app_ids.remove("228980")
 
         # prepare dictionary template for each found app
         dict_apps = {}
