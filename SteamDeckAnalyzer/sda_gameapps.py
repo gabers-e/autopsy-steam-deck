@@ -232,7 +232,6 @@ class SteamDeckGameAppsDSIM(DataSourceIngestModulePlus):
         return filtered_files
 
     def __parse_localconfig_vdf(self, dict_localconfig):
-
         assert isinstance(dict_localconfig, OrderedDict) or isinstance(dict_localconfig, dict), \
             "{}: {}".format(type(dict_localconfig), dict_localconfig)
         assert "UserLocalConfigStore" in dict_localconfig, \
@@ -289,7 +288,6 @@ class SteamDeckGameAppsDSIM(DataSourceIngestModulePlus):
                 if appdata["autocloud_lastlaunch"] == data["LastPlayedTimesSyncTime"]:
                     sanity_check = True
                     break
-        #assert sanity_check is True            # Failing this assertion meant that no timestamps and other data was added to the table even if they were present on the disk image
 
         # summarize app IDs and app information found in localconfig.vdf
         app_ids = sorted(set(itertools.chain(
